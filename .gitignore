@@ -1,5 +1,5 @@
-_pycache_/
+__pycache__/
 snippets/
 instance/
 env/
-app/_pycache_/
+app/__pycache__/
