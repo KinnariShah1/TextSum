@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TextSum</title>
+    <link rel="icon" href="{{url_for('static', filename='./images/favicon.ico')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+
+  </head>
+
+  <body>
+    <!-- <img class="img1" src="https://logomaster.ai/share/w371P9y9" alt="ts"> -->
+    <!-- <div class="top1"> 
+      <button class="button button2"> <a href=""><span>Upgrade to Premium</span></a></button>
+      <button class="button button2"> <a href="#about_us"><span>CONTACT US</span></a></button>
+      <button class="button button2"> <a href="{{url_for('login')}}"><span>Login</span></a></button> -->
+
+      <header class="site-header">
+        <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+          <div class="container">
+            <a class="navbar-brand mr-4" href="/">TextSum</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggle">
+              <div class="navbar-nav mr-auto">
+                <a class="nav-item nav-link" href="{{url_for('home')}}">Home</a>
+                <a class="nav-item nav-link" href="{{url_for('contact')}}">Contact Us</a>
+              </div>
+              
+              <div class="navbar-nav">
+                {% if current_user.is_authenticated %}
+                  <a class="nav-item nav-link" href="{{url_for('account')}}">Account</a>
+                  <a class="nav-item nav-link" href="{{url_for('logout')}}">Logout</a>
+                {% else %}
+                  <a class="nav-item nav-link" href="{{url_for('login')}}">Login</a>
+                  <a class="nav-item nav-link" href="{{url_for('register')}}">Register</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+ 
+    <!-- </div> -->
+
+    <!-- {% block content %}
+
+    {% for post in posts %} -->
+
+    <div class="c1">
+      <form action="\" method="POST">
+    <p><label for="text"><h3>Enter you text below:</h3></label></p>
+    <!-- <input type="text" name="content" id="content" style="width:98%;height:405px;text-align: initial;"> -->
+    <textarea id="text" name="text" rows="17" cols="90">{{ text }}</textarea>
+    <!-- {{ post.content }} -->
+    <!-- <textarea id="w3review" name="w3review" rows="30" cols="85"></textarea></input> -->
+    <br>
+    <!-- <input type="submit" value="Summarize" class="button button1"> -->
+    <!-- <button type="button" class="button button1">Summarize</button></input>  -->
+    <input type="submit" value="Summarize" class="button button1 button:hover">
+  </form>
+  <!-- <input type="submit" value="Summarize" class="button button1 button:hover"> -->
+    </div>
+
+    <!-- {% endfor %}
+
+    {% endblock content %} -->
+
+    <div class="c2">
+      <form action="\" method="POST">
+    <p><label for="t2"><h3>Summarised Text is:</h3></label></p>
+    <!-- <input type="text" name="content" id="content" style="width:350%;height:400px;"> -->
+     <textarea id="t1" rows="17" cols="85">{{ summary }}</textarea>
+    <br>
+  </form>
+    </div>
+
+
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-bottom" style="margin-bottom: auto;">
+      <div class="container">
+        <a class="navbar-brand mx-auto" href="#"><p style="color:white;font-size: 12px;">© 2023 Copyright: TextSum.com</p></a>          
+        <!-- <ul class="navbar-nav sm-icons mr-0"> -->
+          <!-- <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-twitter"></i
+          ></a> -->
+        </div>
+
+    </nav> 
+
+  </body>
+</html>
